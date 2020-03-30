@@ -6,9 +6,22 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[dependencies.clap]
+git = "https://github.com/clap-rs/clap/"
+rev = "37889c6"
+default-features = false
+features = ["suggestions", "derive", "std", "cargo"]
+
 [dependencies]
-tempfile = "3"
+humantime = "2.0.0"
+slog = {version = "2.5.0", default-features = false, features = ["std"]}
+slog-async = {version = "2.5.0", default-features = false}
+slog-term = {version = "2.5.0", default-features = false }
+pipeliner = "1.0.1"
 reqwest = { version = "0.10", default-features = false, features = ["blocking", "gzip"] }
+
+# -- References to verify -- 
+tempfile = "3"
 serde = { version = "1.0", default-features = false, features = [ "derive" ] }
 quick-xml = { version = "0.17", default-features = false, features = [ "serialize" ] }
 glob = "0.3.0"

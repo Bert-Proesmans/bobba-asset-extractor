@@ -1,0 +1,18 @@
+[package]
+name = "bobba_asset_extractor"
+version = "0.1.0"
+authors = ["Bert Proesmans <bproesmans@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tempfile = "3"
+reqwest = { version = "0.10", default-features = false, features = ["blocking", "gzip"] }
+serde = { version = "1.0", default-features = false, features = [ "derive" ] }
+quick-xml = { version = "0.17", default-features = false, features = [ "serialize" ] }
+glob = "0.3.0"
+# swf-parser = {version = "0.11.0", default-features = false }
+swf = { version = "0.1.2", features= ["flate2"], default-features = false }
+flate2 = { version = "1.0", features = ["zlib"], default-features = false }
+png = {version = "0.16.1", features = ["png-encoding"], default-features = false }
